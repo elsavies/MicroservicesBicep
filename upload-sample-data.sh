@@ -11,9 +11,9 @@ timestamp=$(date +%s)
 tempDir="temp_$timestamp"
 mkdir "$tempDir"
 
-declare -A csvUrls
+declare -A urls
 
-urls["green_tripdata_2023-05.parquet"]=${ repoBaseUrl }'Deployment/Data/Samples/green_tripdata_2023-05.parquet'
+urls["green_tripdata_2023-05.parquet"]=${ repoBaseUrl }'green_tripdata_2023-05.parquet'
 
 # Install Azure CLI extension for Data Lake Storage
 az config set extension.use_dynamic_install=yes_without_prompt 2>/dev/null
