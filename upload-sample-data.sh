@@ -21,9 +21,9 @@ az config set extension.use_dynamic_install=yes_without_prompt 2>/dev/null
 az storage fs directory create -n sample_data_generated -f "$blobContainerName" --account-name "$storageAccountName" --account-key "$accountKey" --auth-mode key
 
 # Download files
-for url in ${!urls[@]};
-do
-  outfile=/mnt/azscripts/azscriptinput/${tempDir}/${url}
-  curl -L ${urls[${url}]} -o $outfile
-  output= az storage fs file upload -s $outfile -p sample_data_generated/$url -f "$blobContainerName" --account-name "$storageAccountName" --account-key "$accountKey"  --auth-mode key
-done
+#for url in ${!urls[@]};
+#do
+#  outfile=/mnt/azscripts/azscriptinput/${tempDir}/${url}
+#  curl -L ${urls[${url}]} -o $outfile
+#  output= az storage fs file upload -s $outfile -p sample_data_generated/$url -f "$blobContainerName" --account-name "$storageAccountName" --account-key "$accountKey"  --auth-mode key
+#done
