@@ -22,7 +22,7 @@ echo $storageAccountName
 echo $storageAccountKey
 echo $blobContainerName
 
-az storage fs directory create -n sample_data --account-name "$storageAccountName" --account-key "$storageAccountKey" -f "$blobContainerName" --auth-mode key
+az storage fs directory create -n sample_data --account-name "$storageAccountName" --account-key "$storageAccountKey" -f "$blobContainerName"
 
 # Download files
 #for url in ${!urls[@]};
