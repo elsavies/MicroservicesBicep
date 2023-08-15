@@ -1,29 +1,28 @@
 #!/bin/bash
-
+#
 # Variables
 storageAccountName="$1"
 storageAccountKey="$2"
 blobContainerName="$3"
 repoBaseUrl="$4"
-
-echo $storageAccountName
-echo $storageAccountKey
-echo $blobContainerName
-echo $repoBaseUrl
-
+#
 # Create a unique timestamp for temporary directory
-timestamp=$(date +%s)
-tempDir="temp_$timestamp"
-mkdir "$tempDir"
-
-declare -A urls
-
-urls["green_tripdata_2023-05.parquet"]=${ repoBaseUrl }'green_tripdata_2023-05.parquet'
+#timestamp=$(date +%s)
+#tempDir="temp_$timestamp"
+#mkdir "$tempDir"
+#
+#declare -A urls
+#
+#urls["green_tripdata_2023-05.parquet"]=$repoBaseUrl'green_tripdata_2023-05.parquet'
 
 # Install Azure CLI extension for Data Lake Storage
 az config set extension.use_dynamic_install=yes_without_prompt 2>/dev/null
 
-az storage fs directory create -n sample_data_generated -f "$blobContainerName" --account-name "$storageAccountName" --account-key "$accountKey" --auth-mode "key"
+echo $storageAccountName
+echo $storageAccountKey
+echo $blobContainerName
+
+az storage fs directory create -n sample_data --account-name "$storageAccountName" --account-key "$storageAccountKey" -f "$blobContainerName" --auth-mode key
 
 # Download files
 #for url in ${!urls[@]};
