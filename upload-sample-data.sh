@@ -6,6 +6,10 @@ storageAccountKey="$2"
 blobContainerName="$3"
 repoBaseUrl="$4"
 
+echo $storageAccountName
+echo $storageAccountKey
+echo $blobContainerName
+
 # Create a unique timestamp for temporary directory
 timestamp=$(date +%s)
 tempDir="temp_$timestamp"
