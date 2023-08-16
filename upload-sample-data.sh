@@ -26,6 +26,6 @@ do
   outfile=/mnt/azscripts/azscriptinput/${tempDir}/${url}
   curl -L ${urls[${url}]} -o $outfile
   echo ${urls[${url}]}
-  output= az storage fs file upload -s $outfile -p sample_data/$url -f "$blobContainerName" --account-name "$storageAccountName" --account-key "$accountKey
+  output= az storage fs file upload -s $outfile -p sample_data/$url -f "$blobContainerName" --account-name "$storageAccountName" --account-key "$accountKey"
 done
   
